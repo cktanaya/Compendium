@@ -19,8 +19,8 @@ This project is a portfolio dashboard built with Vue.js, showcasing a creative p
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/cktanaya/vuejs-portfolio-dashboard.git
-cd vuejs-portfolio-dashboard
+git clone https://github.com/cktanaya/Vue-Js-Portfolio
+cd Vue-Js-Portfolio-dashboard
 
 ## Project setup
 ```
