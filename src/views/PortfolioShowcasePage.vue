@@ -12,7 +12,7 @@
               <h5 class="card-title">Compendium</h5>
               <p class="card-text">A repository for Online Research Compendium for our Institution.</p>
               <div class="mt-auto text-center">
-                <a href="https://github.com/cktanaya/Compendium" class="btn btn-warning" target="_blank">View on GitHub</a>
+                <a href="https://github.com/cktanaya/TIP-RESEARCH-COMPENDIUM" class="btn btn-warning" target="_blank">View on GitHub</a>
               </div>
               <i class="bi bi-folder card-icon"></i>
             </div>
