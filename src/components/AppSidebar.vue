@@ -25,16 +25,13 @@
       <router-link to="/portfolio/creative" class="list-group-item list-group-item-action text-black bg-transparent d-flex align-items-center">
         <i class="bi bi-stars me-2"></i>Creative
       </router-link>
+    </div>
 
-      <!-- Space between last link and logout button -->
-      <div class="flex-grow-1"></div>
-
-      <!-- Logout Button -->
-      <div class="p-3">
-        <button class="btn btn-danger w-100 d-flex align-items-center justify-content-center" @click="logout">
-          <i class="bi bi-box-arrow-right me-2"></i>Logout
-        </button>
-      </div>
+    <!-- Fixed Logout Button -->
+    <div class="p-3 logout-wrapper">
+      <button class="btn btn-danger w-100 d-flex align-items-center justify-content-center" @click="logout">
+        <i class="bi bi-box-arrow-right me-2"></i>Logout
+      </button>
     </div>
   </div>
 </template>
@@ -55,6 +52,7 @@ export default {
 #sidebar-wrapper {
   width: 250px;
   overflow-y: auto; /* Enables scrolling if content exceeds height */
+  position: relative;
 }
 
 .list-group-item {
@@ -65,8 +63,14 @@ export default {
   background-color: rgba(0, 0, 0, 0.1); /* Subtle hover effect */
 }
 
-.flex-grow-1 {
-  flex-grow: 1; /* Pushes logout button to bottom with space */
+/* Make the logout button fixed at the bottom */
+.logout-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 250px; /* Ensure the button stays within the sidebar width */
+  background-color: white; /* Match the sidebar background */
+  z-index: 1000;
+  padding: 1rem; /* Add padding for a cleaner look */
 }
 
 /* Optional: Additional styling for logout button */
