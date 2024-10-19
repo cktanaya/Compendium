@@ -15,16 +15,23 @@
         />
       </div>
 
-      <!-- Password Input -->
+      <!-- Password Input with Toggle Icon -->
       <div class="form-group mt-3">
         <label for="password" class="form-label">Password</label>
-        <input
-          type="password"
-          class="form-control form-control-lg"
-          id="password"
-          v-model="password"
-          placeholder="Enter your password"
-        />
+        <div class="input-group">
+          <input
+            :type="passwordVisible ? 'text' : 'password'"
+            class="form-control form-control-lg"
+            id="password"
+            v-model="password"
+            placeholder="Enter your password"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text" @click="togglePasswordVisibility" style="cursor: pointer;">
+              <i :class="passwordVisible ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- Error Message -->
@@ -50,10 +57,15 @@ export default {
     return {
       username: "", // User input for username
       password: "", // User input for password
+      passwordVisible: false, // Control the visibility of password
       errorMessage: "", // To display login errors
     };
   },
   methods: {
+    togglePasswordVisibility() {
+      // Toggle between password visibility
+      this.passwordVisible = !this.passwordVisible;
+    },
     login() {
       // Hardcoded credentials
       const correctUsername = "mcktanaya1";
@@ -76,7 +88,7 @@ export default {
 /* Background for the login page */
 .login-page {
   background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
-  height: 100vh;
+  height: 10vh;
 }
 
 /* Login card styles */
@@ -113,5 +125,11 @@ h3 {
 .text-danger {
   font-weight: bold;
   font-size: 1rem;
+}
+
+/* Styling for the password toggle icon */
+.input-group-text {
+  background-color: white;
+  border: none;
 }
 </style>
